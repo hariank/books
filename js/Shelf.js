@@ -27,11 +27,17 @@ var Shelf = React.createClass({
         });
         return (
             <div className="bookshelf">
-                <div className="shelf">
-                    {cr_shelf}
+                <div className="row">
+                    <h4> currently reading </h4>
+                    <ul className="shelf">
+                        {cr_shelf}
+                    </ul>
                 </div>
-                <div className="shelf">
-                    {read_shelf}
+                <div className="row">
+                    <h4> read </h4> 
+                    <ul className="shelf">
+                        {read_shelf}
+                    </ul>
                 </div>
             </div>
         );
@@ -42,10 +48,12 @@ var Book = React.createClass({
     render: function() {
         var book = this.props.data;
         return (
-            <div className="book">
-                <p> {book.title} </p>
-                <img src={book.image_url} width="50" />
-            </div>
+            <li className="book">
+                <a href={book.link} target="_blank">
+                    <img src={book.image_url} width="80" />
+                </a>
+                {/*<p> {book.title} </p>*/}
+            </li>
         );
     }
 })

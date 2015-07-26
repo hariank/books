@@ -1,0 +1,10 @@
+.container {
+    max-width: 650px;
+}
+.bookshelf {
+    margin-top: 15px;
+}
+.book {
+    display: inline;
+    padding: 20px 10px;
+}
