@@ -1,25 +1,13 @@
 var Shelf = React.createClass({
 
 	getInitialState: function() {
-		return {data: []};
+		return {data: {'read': [], 'currently-reading': []}};
 	},
 	
 	loadBooks: function() {
         $.get(this.props.url, function(result) {
-            console.log(result);
+            this.setState({data: JSON.parse(result)});
         }.bind(this));
-        //$.ajax({
-            //url: this.props.url,
-            //dataType: 'xml',
-            //cache: false,
-            //success: function(data) {
-                //this.setState({data: data});
-            //}.bind(this),
-            //error: function(xhr, status, err) {
-                ////console.error(this.props.url, status, err.toString());
-            //}.bind(this)
-        //});
-		this.setState({data: ['test']});
 	},
 
 	componentDidMount: function() {
@@ -27,18 +15,44 @@ var Shelf = React.createClass({
 	},
 
     render: function() {
+        var read_shelf = this.state.data['read'].map(function(book, index) {
+            return (
+                <Book data={book} key={index} />
+            );
+        });
+        var cr_shelf = this.state.data['currently-reading'].map(function(book, index) {
+            return (
+                <Book data={book} key={index} />
+            );
+        });
         return (
-            <div classname="shelf">
-                <p> url: { this.props.data } </p>
+            <div className="bookshelf">
+                <div className="shelf">
+                    {cr_shelf}
+                </div>
+                <div className="shelf">
+                    {read_shelf}
+                </div>
             </div>
         );
     }
 });
 
-var url = "https://www.goodreads.com/review/list/45141963?format=xml&key=KEY&v=2"
-var key = "yFhXhuMkI2MvcepEd0ipMw"
+var Book = React.createClass({
+    render: function() {
+        var book = this.props.data;
+        return (
+            <div className="book">
+                <p> {book.title} </p>
+                <img src={book.image_url} width="50" />
+            </div>
+        );
+    }
+})
+
+var url = "book_data.json"
 
 React.render(
-    <Shelf url={url.replace('KEY', key)} />,
+    <Shelf url={url} />,
     document.getElementById('content')
 );
