@@ -26,6 +26,7 @@ for review in root.iter('review'):
 
     book_data[shelf_type].append(book_obj)
 
-json_data = json.dumps(book_data)
+#json_data = json.dumps(book_data, indent=4)
 with open('book_data.json', 'w') as outfile:
-    json.dump(json_data, outfile)
+    #json.dump(json_data, outfile)
+    json.dump(book_data, outfile)
