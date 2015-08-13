@@ -21,7 +21,6 @@ for review in root.iter('review'):
     book_obj['image_url'] = book.find('image_url').text
     book_obj['link'] = book.find('link').text
 
-    #print(book_obj)
     shelf_type = review.find('shelves').find('shelf').get('name')
 
     book_data[shelf_type].append(book_obj)

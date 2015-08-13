@@ -8,3 +8,9 @@
     display: inline;
     padding: 20px 10px;
 }
+a {
+    text-decoration: none;
+}
+.link-to-profile {
+    float: right;
+}
