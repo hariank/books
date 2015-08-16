@@ -40,7 +40,7 @@ var Shelf = React.createClass({
                     <ul className="shelf">
                         {read_shelf}
                     </ul>
-                    <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read"> more </a>
+                    <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read" target="_blank"> more </a>
                 </div>
             </div>
         );
