@@ -27,23 +27,31 @@ var Shelf = React.createClass({
             read_shelf.push(<Book data={read_books[i]} key={i} />);
         }
 
-        return (
-            <div className="bookshelf">
-                <div className="row">
-                    <h4> currently reading </h4>
-                    <ul className="shelf">
-                        {cr_shelf}
-                    </ul>
+        if (this.state.data['currently-reading'].length || this.state.data['read'].length) {
+            return (
+                <div className="bookshelf">
+                    <div className="row">
+                        <h4> currently reading </h4>
+                        <ul className="shelf">
+                            {cr_shelf}
+                        </ul>
+                    </div>
+                    <div className="row">
+                        <h4> read </h4> 
+                        <ul className="shelf">
+                            {read_shelf}
+                        </ul>
+                        <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read" target="_blank"> more </a>
+                    </div>
                 </div>
-                <div className="row">
-                    <h4> read </h4> 
-                    <ul className="shelf">
-                        {read_shelf}
-                    </ul>
-                    <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read" target="_blank"> more </a>
+            );
+        }
+        else
+            return (
+                <div className="loader">
+                    <img src="loader.gif" alt="loader"/> 
                 </div>
-            </div>
-        );
+            );
     }
 });
 
