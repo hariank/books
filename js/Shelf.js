@@ -15,11 +15,11 @@ var Shelf = React.createClass({
 	},
 
     render: function() {
-        var cr_shelf = this.state.data['currently-reading'].map(function(book, index) {
-            return (
-                <Book data={book} key={index} />
-            );
-        });
+        var cr_shelf = [];
+        var reading_books = this.state.data['currently-reading'];
+        for (var i = 0; i < Math.min(reading_books.length, max_disp); i++) {
+            cr_shelf.push(<Book data={reading_books[i]} key={i} />);
+        }
 
         var read_shelf = [];
         var read_books = this.state.data['read'];
