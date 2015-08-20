@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import requests
 import xml.etree.ElementTree as ET
 import json
