@@ -14,3 +14,12 @@ a {
 .link-to-profile {
     float: right;
 }
+.footer {
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
