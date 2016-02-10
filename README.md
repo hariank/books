@@ -1,5 +1,4 @@
 # books
-http://hariank.me/books
 
 A simple reading list built with React.js and the Goodreads API.
 
