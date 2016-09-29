@@ -31,13 +31,7 @@ var Shelf = React.createClass({
             return (
                 <div className="bookshelf">
                     <div className="row">
-                        <h4> currently reading </h4>
-                        <ul className="shelf">
-                            {cr_shelf}
-                        </ul>
-                    </div>
-                    <div className="row">
-                        <h4> read </h4> 
+                        <h4> books </h4> 
                         <ul className="shelf">
                             {read_shelf}
                         </ul>
@@ -49,7 +43,7 @@ var Shelf = React.createClass({
         else
             return (
                 <div className="loader">
-                    <img src="loader.gif" alt="loader"/> 
+                    <img src="loader.svg" alt="loader"/> 
                 </div>
             );
     }
@@ -61,7 +55,7 @@ var Book = React.createClass({
         return (
             <li className="book">
                 <a href={book.link} target="_blank">
-                    <img src={book.image_url} width="80" />
+                    <img src={book.image_url} width="90" />
                 </a>
             </li>
         );
@@ -69,7 +63,7 @@ var Book = React.createClass({
 })
 
 var url = "https://dl.dropboxusercontent.com/u/96903373/book_data.json";
-var max_disp = 12;
+var max_disp = 18;
 
 React.render(
     <Shelf url={url} />,
