@@ -31,11 +31,12 @@ var Shelf = React.createClass({
             return (
                 <div className="bookshelf">
                     <div className="row">
-                        <h4> read </h4> 
+                        <h4> recently read </h4> 
+                        <p> (from <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read" target="_blank"> goodreads</a>)</p>
+
                         <ul className="shelf">
                             {read_shelf}
                         </ul>
-                        <a className="link-to-profile" href="https://www.goodreads.com/review/list/45141963-hariank?shelf=read" target="_blank"> more </a>
                     </div>
                 </div>
             );
@@ -54,16 +55,19 @@ var Book = React.createClass({
         var book = this.props.data;
         return (
             <li className="book">
+                <img src={book.image_url} width="90" />
                 <a href={book.link} target="_blank">
-                    <img src={book.image_url} width="90" />
+                    <p> {book.title} - {book.author} </p>
                 </a>
             </li>
+            //<br>
         );
     }
 })
 
-var url = "https://dl.dropboxusercontent.com/u/96903373/book_data.json";
-var max_disp = 18;
+//var url = "https://dl.dropboxusercontent.com/s/gp0t4ghjol1s575/book_data.json?dl=0"
+var url = "https://dl.dropboxusercontent.com/s/05ru4ft3sk88tdc/book_data.json?dl=0"
+var max_disp = 15;
 
 React.render(
     <Shelf url={url} />,

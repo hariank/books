@@ -12,10 +12,22 @@ body {
 .bookshelf {
     margin-top: 15px;
 }
+    .bookshelf ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        list_style_position: inside;
+    }
+    .bookshelf h4 {
+        margin-bottom: 0;
+    }
 .book {
-    display: inline;
-    padding: 20px 10px;
+    /*display: inline;*/
+    /*padding: 20px 10px;*/
 }
+    .book img {
+        /*float: left;*/
+    }
 a {
     color: inherit;
     /*text-decoration: none;*/
@@ -23,10 +35,10 @@ a {
     a:hover {
         color: #C41E3A;
     }
-.link-to-profile {
-    float: right;
-    padding-right: 5px;
-}
+/*.link-to-profile {*/
+    /*float: right;*/
+    /*padding-right: 5px;*/
+/*}*/
 .loader {
 	position: fixed;
 	top: 50%;

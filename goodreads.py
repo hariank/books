@@ -19,6 +19,7 @@ for review in root.iter('review'):
     book_obj = {}
     book = review.find('book')
     book_obj['title'] = book.find('title').text
+    book_obj['author'] = book.find('authors').find('author').find('name').text
     book_obj['image_url'] = book.find('image_url').text
     book_obj['link'] = book.find('link').text
 
